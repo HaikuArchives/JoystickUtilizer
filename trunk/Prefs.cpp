@@ -25,6 +25,8 @@
 #include "App.h"
 #include "constants.h"
 
+#include <stdlib.h>
+
 Prefs prefs;
 
 Prefs::Prefs()
@@ -69,7 +71,7 @@ Prefs::~Prefs() {
 	SaveToFile();
 
 	Preset *preset;
-	while ( (preset = (Preset *)fPresets.RemoveItem(0L)) )
+	while ( (preset = (Preset *)fPresets.RemoveItem((int32)0)) )
 		delete preset;
 
 }

@@ -160,7 +160,7 @@ void InputDevice::LoadSetting( BMessage *prefsMessage )
 	Lock();
 	
 	JoystickSettings *js;
-	while ( ( js = (JoystickSettings *)fJoystickSettings.RemoveItem( 0L ) ) )
+	while ( ( js = (JoystickSettings *)fJoystickSettings.RemoveItem( (int32)0 ) ) )
 		delete js;
 
 	// -- Presets

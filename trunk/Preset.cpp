@@ -14,7 +14,7 @@
 
 #include "Prefs.h"
 
-Preset::Preset( const char *name = 0 )
+Preset::Preset( const char *name )
 {
 	if (name) fName = name;
 }
@@ -32,7 +32,7 @@ void Preset::SetTo( Preset &from )
 void Preset::Clear()
 {
 	JoystickSettings *js;
-	for (int i=0; (js = (JoystickSettings *)fJoystickSettings.RemoveItem(0L)); ++i)
+	for (int i=0; (js = (JoystickSettings *)fJoystickSettings.RemoveItem((int32)0)); ++i)
 		delete js;
 }
 
